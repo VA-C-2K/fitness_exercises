@@ -4,6 +4,7 @@ import HeroBannerImage from '../assets/images/banner.png';
 
 const HeroBanner = () => {
   return (
+    <>
     <Box sx={{ mt: { lg: '212px', xs: '70px' }, ml: { sm: '50px' } }} position="relative" p="20px">
       <Typography fontWeight="600" fontSize="26px" ml="20px">
         <Typography sx={{ color:"#FF2625", fontFamily:'Amita',fontWeight:"500",fontSize:{lg:'96px',xs:'36px'} }} >Jagdamb </Typography> <br />
@@ -37,7 +38,7 @@ const HeroBanner = () => {
         </Typography>
     <img src={HeroBannerImage} alt="hero-banner" className="hero-banner-img" />
     </Box>
-
+    </>
   )
 }
 

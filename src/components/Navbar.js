@@ -1,9 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React,{useState,useEffect} from 'react';
+import { Link,useLocation } from 'react-router-dom';
 import { Stack } from '@mui/material';
 import Logo from '../assets/images/Logo.png';
 
 const Navbar = () => {
+  let location = useLocation();
+  const [currentLocation ,setCurrentLocation] = useState("");
+  useEffect(()=>{
+    setCurrentLocation(location.pathname);
+  },[location.pathname]);
   return (
     <Stack
     direction="row"
@@ -22,10 +27,13 @@ const Navbar = () => {
           textDecoration:'none',color:"#3A1212",
           borderBottom:'3px solid #FF2625'
         }}>Home</Link>
+         {currentLocation==="/" ?(
         <a href="#exercises" style={{ 
           textDecoration:'none',color:'#3A1212'}}>
             Exercises
-          </a>
+          </a>):(
+            <></>
+          )}
       </Stack>
     </Stack>
   )
